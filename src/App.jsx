@@ -5,15 +5,20 @@ import Navbar from "./components/Navbar/Navbar";
 import Hero from "./components/Hero/Hero";
 import Stats from "./components/Stats/Stats";
 import About from "./components/About/About";
+import WhyChoose from "./components/WhyChoose/WhyChoose";
 import Products from "./components/Products/Products";
 import QuoteModal from "./components/QuoteModal/QuoteModal";
-import WhyChoose from "./components/WhyChoose/WhyChoose";
 
 function App() {
   const [isQuoteOpen, setIsQuoteOpen] = useState(false);
 
-  const handleOpenQuote = () => setIsQuoteOpen(true);
-  const handleCloseQuote = () => setIsQuoteOpen(false);
+  const handleOpenQuote = () => {
+    setIsQuoteOpen(true);
+  };
+
+  const handleCloseQuote = () => {
+    setIsQuoteOpen(false);
+  };
 
   return (
     <>
@@ -23,14 +28,14 @@ function App() {
         <Hero onOpenQuote={handleOpenQuote} />
         <Stats />
         <About />
-<<<<<<< HEAD
-        <Products onOpenQuote={handleOpenQuote} />
-=======
         <WhyChoose />
->>>>>>> 7e5629573d9224ac52faf7b111906933de4eb9f1
+        <Products onOpenQuote={handleOpenQuote} />
       </main>
 
-      <QuoteModal isOpen={isQuoteOpen} onClose={handleCloseQuote} />
+      <QuoteModal
+        isOpen={isQuoteOpen}
+        onClose={handleCloseQuote}
+      />
     </>
   );
 }

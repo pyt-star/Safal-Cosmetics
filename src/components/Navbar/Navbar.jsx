@@ -1,7 +1,7 @@
 import "./Navbar.css";
 import { useEffect, useState } from "react";
 
-function Navbar() {
+function Navbar({ onOpenQuote }) {
 
   const [scrolled, setScrolled] = useState(false);
 
@@ -42,7 +42,7 @@ function Navbar() {
 
       </ul>
 
-      <button className="quote-btn">
+      <button className="quote-btn" onClick={onOpenQuote}>
 
         Request Quote
 

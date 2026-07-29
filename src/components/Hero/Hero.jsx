@@ -1,7 +1,7 @@
 import "./Hero.css";
 import hero from "../../assets/images/hero.png";
 
-function Hero() {
+function Hero({ onOpenQuote }) {
   return (
     <section className="hero">
 
@@ -28,11 +28,11 @@ function Hero() {
 
         <div className="hero-buttons">
 
-          <button className="primary-btn">
-            Explore Services
+          <button className="primary-btn" onClick={onOpenQuote}>
+            Get a Quote
           </button>
 
-          <button className="secondary-btn">
+          <button className="secondary-btn" onClick={onOpenQuote}>
             Contact Us
           </button>
 

@@ -6,6 +6,7 @@ import Hero from "./components/Hero/Hero";
 import Stats from "./components/Stats/Stats";
 import About from "./components/About/About";
 import WhyChoose from "./components/WhyChoose/WhyChoose";
+import Process from "./components/Process/Process";
 import Products from "./components/Products/Products";
 import QuoteModal from "./components/QuoteModal/QuoteModal";
 
@@ -29,6 +30,7 @@ function App() {
         <Stats />
         <About />
         <WhyChoose />
+        <Process />
         <Products onOpenQuote={handleOpenQuote} />
       </main>
 

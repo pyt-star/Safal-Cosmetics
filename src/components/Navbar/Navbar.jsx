@@ -34,11 +34,10 @@ function Navbar({ onOpenQuote }) {
       <ul className="nav-links">
 
         <li><a href="#">Home</a></li>
-        <li><a href="#">About</a></li>
-        <li><a href="#">Services</a></li>
-        <li><a href="#">Products</a></li>
-        <li><a href="#">Infrastructure</a></li>
-        <li><a href="#">Contact</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#products">Products Manufactured</a></li>
+        <li><a href="#products">Products</a></li>
+        <li><a href="#contact" onClick={onOpenQuote}>Contact</a></li>
 
       </ul>
 

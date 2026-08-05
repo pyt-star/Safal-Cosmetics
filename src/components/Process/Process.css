@@ -1,158 +1,42 @@
-.process{
-
-    padding:120px 8%;
-
-    background:#FCFBF8;
+.process-section {
+  display: flex;
+  align-items: center;
+  gap: 100px;
+  background: var(--c-bg);
 }
 
-.process-heading{
-
-    text-align:center;
-
-    margin-bottom:80px;
+.process-header {
+  flex: 1;
 }
 
-.process-heading span{
-
-    color:#C9A227;
-
-    letter-spacing:3px;
-
-    font-size:.9rem;
-
-    font-weight:600;
+.process-header h2 {
+  font-size: 3rem;
+  color: var(--c-primary);
 }
 
-.process-heading h2{
-
-    font-family:"Playfair Display",serif;
-
-    font-size:3.2rem;
-
-    color:#1A1A1A;
-
-    margin:20px 0;
+.process-list {
+  flex: 1;
+  list-style: none;
+  border-top: 1px solid #e0e0e0;
 }
 
-.process-heading p{
-
-    max-width:700px;
-
-    margin:auto;
-
-    color:#666;
-
-    line-height:1.8;
+.process-list li {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  padding: 30px 0;
+  border-bottom: 1px solid #e0e0e0;
 }
 
-.timeline{
-
-    display:flex;
-
-    justify-content:space-between;
-
-    align-items:flex-start;
-
-    position:relative;
-
-    gap:20px;
+.process-list .num {
+  font-family: var(--font-serif);
+  font-size: 1.5rem;
+  color: var(--c-accent);
+  font-style: italic;
 }
 
-.timeline::before{
-
-    content:"";
-
-    position:absolute;
-
-    top:38px;
-
-    left:7%;
-
-    right:7%;
-
-    height:2px;
-
-    background:#D8D8D8;
-
-    z-index:0;
-}
-
-.timeline-item{
-
-    position:relative;
-
-    z-index:2;
-
-    flex:1;
-
-    text-align:center;
-}
-
-.circle{
-
-    width:78px;
-
-    height:78px;
-
-    margin:auto;
-
-    border-radius:50%;
-
-    background:white;
-
-    border:2px solid #C9A227;
-
-    display:flex;
-
-    justify-content:center;
-
-    align-items:center;
-
-    color:#C9A227;
-
-    font-size:1.9rem;
-
-    transition:.35s;
-}
-
-.timeline-item:hover .circle{
-
-    background:#C9A227;
-
-    color:white;
-
-    transform:translateY(-8px);
-}
-
-.step-number{
-
-    display:block;
-
-    margin:18px 0 10px;
-
-    color:#C9A227;
-
-    font-weight:700;
-
-    letter-spacing:2px;
-}
-
-.timeline-item h3{
-
-    font-size:1.2rem;
-
-    color:#1A1A1A;
-
-    margin-bottom:12px;
-}
-
-.timeline-item p{
-
-    color:#666;
-
-    line-height:1.7;
-
-    font-size:.95rem;
-
-    padding:0 10px;
+.process-list h4 {
+  font-family: var(--font-sans);
+  font-size: 1.2rem;
+  font-weight: 400;
 }

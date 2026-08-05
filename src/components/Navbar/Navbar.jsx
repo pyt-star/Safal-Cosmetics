@@ -1,55 +1,34 @@
+import { useState, useEffect } from "react";
 import "./Navbar.css";
-import { useEffect, useState } from "react";
 
 function Navbar({ onOpenQuote }) {
-
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-
-    const handleScroll = () => {
-
-      setScrolled(window.scrollY > 80);
-
-    };
-
+    const handleScroll = () => setScrolled(window.scrollY > 50);
     window.addEventListener("scroll", handleScroll);
-
     return () => window.removeEventListener("scroll", handleScroll);
-
   }, []);
 
   return (
-
-    <nav className={scrolled ? "navbar scrolled" : "navbar"}>
-
-      <div className="logo">
-
-        <h2>Safal Cosmetics</h2>
-
-        <span>PERFUME SOLUTIONS</span>
-
+    <nav className={`navbar ${scrolled ? "scrolled" : ""}`}>
+      <div className="nav-logo">
+        <h2>SAFAL</h2>
       </div>
-
       <ul className="nav-links">
-
-        <li><a href="#">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#products">Products</a></li>
-        <li><a href="#contact" onClick={onOpenQuote}>Contact</a></li>
-
+        <li><a href="#divisions">Manufacturing</a></li>
+        <li><a href="#purpose">Our Purpose</a></li>
+        <li><a href="#news">Commitments</a></li>
+        <li><a href="#power">Capabilities</a></li>
       </ul>
-
-      <button className="quote-btn" onClick={onOpenQuote}>
-
-        Request Quote
-
-      </button>
-
+      <div className="nav-actions">
+        <button className="nav-btn" onClick={onOpenQuote}>
+          Contact Us
+        </button>
+        <span className="lang-switch">EN / FR / AR</span>
+      </div>
     </nav>
-
   );
-
 }
 
 export default Navbar;

@@ -1,45 +1,23 @@
 import "./Hero.css";
-import hero from "../../assets/images/hero.png";
+import heroImg from "../../assets/images/hero.png"; 
 
-function Hero({ onOpenQuote }) {
+function Hero() {
   return (
     <section className="hero">
-
-      <div className="overlay"></div>
-
-      <img src={hero} alt="Perfume Manufacturing" />
-
-      <div className="hero-content">
-
-        <span className="tag">
-          PRIVATE LABEL PERFUME MANUFACTURER
-        </span>
-
-        <h1>
-          Manufacturing <br />
-          World-Class <br />
-          <span>Perfume Brands</span>
-        </h1>
-
-        <p>
-          Complete end-to-end perfume manufacturing
-          for startups and established brands.
-        </p>
-
-        <div className="hero-buttons">
-
-          <button className="primary-btn" onClick={onOpenQuote}>
-            Get a Quote
-          </button>
-
-          <button className="secondary-btn" onClick={onOpenQuote}>
-            Contact Us
-          </button>
-
-        </div>
-
+      <div className="hero-bg">
+        <img src={heroImg} alt="Fragrance Creation" />
+        <div className="overlay"></div>
       </div>
-
+      
+      <div className="hero-content">
+        <span className="hero-tag">Specialist manufacturing partner</span>
+        <h1>From Concept to Bottle.</h1>
+        <div className="hero-footer">
+          <span>Results in 30 Days</span>
+          <span>Our Commitments</span>
+          <span>Our Purpose</span>
+        </div>
+      </div>
     </section>
   );
 }

@@ -1,93 +1,597 @@
+/* =========================================
+   SERVICES SECTION
+========================================= */
+
 .products-section {
-  padding: 0;
-  background: var(--c-primary);
-}
-
-.divisions-wrapper {
-  display: flex;
-  height: 80vh;
-  width: 100%;
-}
-
-.division-col {
-  flex: 1;
   position: relative;
-  border-right: 1px solid rgba(255,255,255,0.1);
+
+  width: 100%;
+
+  padding: 110px 7% 100px;
+
+  box-sizing: border-box;
+
+  background: #f4f4f0;
+
+  color: #111;
+
   overflow: hidden;
-  cursor: pointer;
-  transition: var(--transition);
-  background: var(--c-primary);
 }
 
-.division-col:last-child {
-  border-right: none;
+
+/* =========================================
+   HEADER
+========================================= */
+
+.products-header {
+  position: relative;
+
+  z-index: 2;
 }
 
-.col-overlay {
-  position: absolute;
-  inset: 0;
-  background: rgba(0,0,0,0.1);
-  transition: var(--transition);
-}
 
-.division-col:hover {
-  flex: 1.2;
-}
+/* Small label */
 
-.division-col:hover .col-overlay {
-  background: rgba(0,0,0,0.4);
-}
+.products-label {
+  display: flex;
 
-.col-content {
-  position: absolute;
-  bottom: 50px;
-  left: 40px;
-  right: 40px;
-  color: #ffffff;
-  transition: var(--transition);
-}
+  align-items: center;
 
-.col-subtitle {
-  font-family: var(--font-serif);
-  font-size: 1.2rem;
-  font-style: italic;
-  display: block;
-  margin-bottom: 10px;
-}
+  gap: 10px;
 
-.division-col h2 {
-  font-family: var(--font-sans);
-  font-size: 1.8rem;
+  margin-bottom: 24px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
   font-weight: 600;
-  text-transform: uppercase;
-  margin-bottom: 15px;
+
+  letter-spacing: 2.5px;
+
+  color: #777;
 }
 
-.division-col p {
-  font-size: 0.9rem;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: var(--transition);
-  margin-bottom: 20px;
+.products-label span {
+  width: 7px;
+  height: 7px;
+
+  border-radius: 50%;
+
+  background: #164c9c;
 }
 
-.btn-discover {
-  background: transparent;
-  color: #ffffff;
-  border: none;
-  border-bottom: 1px solid #ffffff;
-  padding-bottom: 5px;
-  text-transform: uppercase;
+
+/* =========================================
+   TITLE
+========================================= */
+
+.products-title-row {
+  display: flex;
+
+  align-items: flex-end;
+
+  justify-content: space-between;
+
+  gap: 60px;
+}
+
+.products-title-row h2 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(48px, 5.5vw, 78px);
+
+  line-height: 0.92;
+
+  letter-spacing: -3px;
+
+  font-weight: 400;
+
+  color: #111;
+}
+
+.products-title-row h2 span {
+  color: #164c9c;
+}
+
+
+/* Description */
+
+.products-title-row p {
+  max-width: 390px;
+
+  margin: 0 0 5px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 13px;
+
+  line-height: 1.7;
+
+  color: #666;
+}
+
+
+/* =========================================
+   LINE
+========================================= */
+
+.products-line {
+  width: 100%;
+
+  height: 1px;
+
+  margin-top: 55px;
+
+  background: #d9d9d3;
+
+  position: relative;
+}
+
+.products-line span {
+  position: absolute;
+
+  left: 0;
+
+  top: -1px;
+
+  width: 85px;
+
+  height: 2px;
+
+  background: #164c9c;
+}
+
+
+/* =========================================
+   SERVICES GRID
+========================================= */
+
+.services-grid {
+  display: grid;
+
+  grid-template-columns: repeat(4, 1fr);
+
+  gap: 16px;
+
+  margin-top: 55px;
+}
+
+
+/* =========================================
+   SERVICE CARD
+========================================= */
+
+.service-card {
+  min-height: 340px;
+
+  padding: 26px;
+
+  box-sizing: border-box;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: space-between;
+
+  background: #ffffff;
+
+  border: 1px solid #e4e4df;
+
+  border-radius: 22px;
+
+  position: relative;
+
+  overflow: hidden;
+
+  transition:
+    transform 0.35s ease,
+    box-shadow 0.35s ease,
+    border-color 0.35s ease;
+}
+
+
+/* subtle blue glow */
+
+.service-card::after {
+  content: "";
+
+  position: absolute;
+
+  width: 170px;
+
+  height: 170px;
+
+  right: -80px;
+
+  bottom: -80px;
+
+  border-radius: 50%;
+
+  background: rgba(22, 76, 156, 0.06);
+
+  transition: transform 0.4s ease;
+}
+
+
+/* Hover */
+
+.service-card:hover {
+  transform: translateY(-8px);
+
+  border-color: rgba(22, 76, 156, 0.3);
+
+  box-shadow:
+    0 20px 45px rgba(0, 0, 0, 0.08);
+}
+
+.service-card:hover::after {
+  transform: scale(1.5);
+}
+
+
+/* =========================================
+   CARD TOP
+========================================= */
+
+.service-top {
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+}
+
+
+/* Number circle */
+
+.service-number {
+  width: 42px;
+  height: 42px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  border-radius: 50%;
+
+  background: #f0f3f7;
+
+  color: #164c9c;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
   letter-spacing: 1px;
-  font-size: 0.8rem;
-  cursor: pointer;
-  opacity: 0;
-  transform: translateY(20px);
-  transition: var(--transition);
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
 }
 
-.division-col:hover p,
-.division-col:hover .btn-discover {
-  opacity: 1;
-  transform: translateY(0);
+.service-card:hover .service-number {
+  background: #164c9c;
+
+  color: white;
+}
+
+
+/* Arrow */
+
+.service-arrow {
+  width: 34px;
+  height: 34px;
+
+  border: 1px solid #deded9;
+
+  border-radius: 50%;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 15px;
+
+  color: #555;
+
+  transition:
+    background 0.3s ease,
+    color 0.3s ease;
+}
+
+.service-card:hover .service-arrow {
+  background: #111;
+
+  color: white;
+
+  border-color: #111;
+}
+
+
+/* =========================================
+   CARD CONTENT
+========================================= */
+
+.service-content {
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 35px;
+}
+
+
+/* Tag */
+
+.service-tag {
+  display: inline-block;
+
+  margin-bottom: 16px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.8px;
+
+  color: #164c9c;
+}
+
+
+/* Title */
+
+.service-content h3 {
+  margin: 0 0 14px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 22px;
+
+  line-height: 1.1;
+
+  letter-spacing: -0.5px;
+
+  font-weight: 600;
+
+  color: #111;
+}
+
+
+/* Description */
+
+.service-content p {
+  margin: 0;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  line-height: 1.7;
+
+  color: #777;
+}
+
+
+/* =========================================
+   CARD BOTTOM
+========================================= */
+
+.service-bottom {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  position: relative;
+
+  z-index: 2;
+
+  margin-top: 25px;
+}
+
+.service-bottom span:first-child {
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  font-weight: 600;
+
+  letter-spacing: 1.5px;
+
+  white-space: nowrap;
+
+  color: #999;
+}
+
+.service-line {
+  height: 1px;
+
+  flex: 1;
+
+  background: #deded9;
+}
+
+
+/* =========================================
+   CTA
+========================================= */
+
+.services-cta {
+  margin-top: 65px;
+
+  padding: 30px 35px;
+
+  background: #111;
+
+  border-radius: 20px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: space-between;
+
+  gap: 30px;
+
+  color: white;
+}
+
+
+/* Small CTA text */
+
+.cta-small {
+  display: block;
+
+  margin-bottom: 8px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 2px;
+
+  color: #777;
+}
+
+
+/* CTA heading */
+
+.services-cta h3 {
+  margin: 0;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 28px;
+
+  font-weight: 400;
+}
+
+
+/* CTA button */
+
+.services-cta a {
+  display: flex;
+
+  align-items: center;
+
+  gap: 18px;
+
+  padding: 14px 20px;
+
+  border-radius: 30px;
+
+  background: #164c9c;
+
+  color: white;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  letter-spacing: 0.5px;
+
+  transition:
+    transform 0.3s ease,
+    background 0.3s ease;
+}
+
+.services-cta a:hover {
+  transform: translateX(4px);
+
+  background: #1d5dbb;
+}
+
+.services-cta a span {
+  font-size: 16px;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .services-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 700px) {
+
+  .products-section {
+    padding: 80px 20px;
+  }
+
+  .products-title-row {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    gap: 25px;
+  }
+
+  .products-title-row h2 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .products-title-row p {
+    max-width: 100%;
+  }
+
+  .products-line {
+    margin-top: 40px;
+  }
+
+  .services-grid {
+    grid-template-columns: 1fr;
+
+    gap: 12px;
+
+    margin-top: 40px;
+  }
+
+  .service-card {
+    min-height: 300px;
+  }
+
+  .services-cta {
+    flex-direction: column;
+
+    align-items: flex-start;
+
+    padding: 28px;
+  }
+
+  .services-cta a {
+    width: 100%;
+
+    justify-content: space-between;
+
+    box-sizing: border-box;
+  }
+
 }

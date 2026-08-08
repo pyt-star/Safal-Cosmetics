@@ -1,68 +1,746 @@
-.hero {
+/* =========================================
+   SAFAL HERO
+========================================= */
+
+.safal-hero {
+  min-height: calc(100vh - 82px);
+
+  width: 100%;
+
   position: relative;
-  height: 100vh;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  padding: 0 5%;
+
+  overflow: hidden;
+
+  background: #f6f5ef;
+
+  display: grid;
+
+  grid-template-columns: 52% 48%;
+
+  box-sizing: border-box;
+
+  padding: 70px 7% 100px;
 }
 
-.hero-bg {
+
+/* =========================================
+   BACKGROUND ORBIT
+========================================= */
+
+.hero-orbit {
   position: absolute;
-  inset: 0;
-  z-index: 1;
+
+  width: 650px;
+  height: 650px;
+
+  right: 2%;
+  top: 40px;
+
+  border: 1px solid rgba(20, 20, 20, 0.08);
+
+  border-radius: 50%;
+
+  pointer-events: none;
 }
 
-.hero-bg img {
+.hero-orbit::after {
+  content: "";
+
+  position: absolute;
+
+  width: 450px;
+  height: 450px;
+
+  top: 100px;
+  left: 100px;
+
+  border: 1px solid rgba(20, 20, 20, 0.06);
+
+  border-radius: 50%;
+}
+
+
+/* =========================================
+   LEFT CONTENT
+========================================= */
+
+.safal-hero-content {
+  position: relative;
+
+  z-index: 5;
+
+  display: flex;
+
+  flex-direction: column;
+
+  justify-content: center;
+
+  padding-bottom: 30px;
+}
+
+
+/* =========================================
+   LABEL
+========================================= */
+
+.hero-label {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+
+  margin-bottom: 24px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 10px;
+
+  font-weight: 600;
+
+  letter-spacing: 2.5px;
+
+  color: #444;
+}
+
+.hero-label-dot {
+  width: 7px;
+  height: 7px;
+
+  background: #154b9b;
+
+  border-radius: 50%;
+
+  display: inline-block;
+}
+
+
+/* =========================================
+   MAIN HEADING
+========================================= */
+
+.safal-hero h1 {
+  margin: 0;
+
+  max-width: 700px;
+
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: clamp(55px, 6vw, 92px);
+
+  line-height: 0.94;
+
+  letter-spacing: -4px;
+
+  font-weight: 400;
+
+  color: #111;
+}
+
+.safal-hero h1 span {
+  color: #164c9c;
+}
+
+
+/* =========================================
+   DESCRIPTION
+========================================= */
+
+.hero-description {
+  max-width: 480px;
+
+  margin: 30px 0 0;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 15px;
+
+  line-height: 1.7;
+
+  color: #555;
+}
+
+
+/* =========================================
+   BUTTONS
+========================================= */
+
+.hero-buttons {
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  margin-top: 35px;
+}
+
+.hero-btn {
+  height: 48px;
+
+  padding: 0 22px;
+
+  display: inline-flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  gap: 14px;
+
+  border-radius: 30px;
+
+  text-decoration: none;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 12px;
+
+  transition: all 0.25s ease;
+
+  box-sizing: border-box;
+}
+
+
+/* Primary */
+
+.hero-btn-primary {
+  background: #0b0b0b;
+
+  color: white;
+}
+
+.hero-btn-primary span {
+  font-size: 17px;
+
+  transition: transform 0.2s ease;
+}
+
+.hero-btn-primary:hover {
+  background: #164c9c;
+}
+
+.hero-btn-primary:hover span {
+  transform: translate(3px, -3px);
+}
+
+
+/* Secondary */
+
+.hero-btn-secondary {
+  border: 1px solid rgba(0, 0, 0, 0.2);
+
+  color: #222;
+
+  background: transparent;
+}
+
+.hero-btn-secondary:hover {
+  background: #ffffff;
+
+  border-color: #111;
+}
+
+
+/* =========================================
+   STATS
+========================================= */
+
+.hero-stats {
+  display: flex;
+
+  align-items: center;
+
+  gap: 25px;
+
+  margin-top: 55px;
+}
+
+.hero-stat {
+  display: flex;
+
+  align-items: center;
+
+  gap: 10px;
+}
+
+.hero-stat strong {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 25px;
+
+  font-weight: 400;
+
+  color: #111;
+}
+
+.hero-stat span {
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  line-height: 1.35;
+
+  letter-spacing: 0.5px;
+
+  text-transform: uppercase;
+
+  color: #777;
+}
+
+.hero-stat-divider {
+  width: 1px;
+
+  height: 35px;
+
+  background: rgba(0, 0, 0, 0.15);
+}
+
+
+/* =========================================
+   RIGHT VISUAL
+========================================= */
+
+.safal-hero-visual {
+  position: relative;
+
+  min-height: 600px;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  z-index: 3;
+}
+
+
+/* =========================================
+   MAIN CIRCLE
+========================================= */
+
+.hero-circle {
+  position: absolute;
+
+  width: 520px;
+  height: 520px;
+
+  border-radius: 50%;
+
+  background: #e9e6dc;
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+}
+
+
+/* =========================================
+   IMAGE
+========================================= */
+
+.hero-image-container {
+  position: relative;
+
+  width: 400px;
+  height: 480px;
+
+  overflow: hidden;
+
+  border-radius: 200px 200px 20px 20px;
+
+  background: #151515;
+
+  box-shadow:
+    0 30px 70px rgba(0, 0, 0, 0.18);
+
+  z-index: 3;
+}
+
+.hero-image-container::after {
+  content: "";
+
+  position: absolute;
+
+  inset: 0;
+
+  background: linear-gradient(
+    180deg,
+    rgba(0, 0, 0, 0.03),
+    rgba(0, 0, 0, 0.18)
+  );
+
+  pointer-events: none;
+}
+
+.hero-image-container img {
   width: 100%;
   height: 100%;
+
+  display: block;
+
   object-fit: cover;
 }
 
-.overlay {
+
+/* =========================================
+   FLOATING CARD
+========================================= */
+
+.hero-floating-card {
   position: absolute;
-  inset: 0;
-  background: linear-gradient(to top, rgba(10, 43, 30, 0.8) 0%, rgba(0,0,0,0.3) 100%);
-}
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: #ffffff;
-  margin-top: auto;
-  margin-bottom: 50px;
-}
+  left: 2%;
 
-.hero-tag {
-  display: block;
-  font-size: 0.9rem;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin-bottom: 20px;
-}
+  bottom: 80px;
 
-.hero h1 {
-  font-size: 5rem;
-  line-height: 1.1;
-  max-width: 800px;
-  margin-bottom: 60px;
-}
+  z-index: 5;
 
-.hero-footer {
+  width: 190px;
+
+  padding: 14px 16px;
+
+  background: rgba(255, 255, 255, 0.94);
+
+  border: 1px solid rgba(0, 0, 0, 0.08);
+
+  border-radius: 12px;
+
   display: flex;
-  gap: 40px;
-  border-top: 1px solid rgba(255,255,255,0.3);
-  padding-top: 20px;
+
+  align-items: center;
+
+  gap: 12px;
+
+  box-shadow:
+    0 15px 35px rgba(0, 0, 0, 0.08);
 }
 
-.hero-footer span {
-  font-family: var(--font-sans);
-  font-size: 0.85rem;
+.floating-icon {
+  width: 34px;
+  height: 34px;
+
+  flex-shrink: 0;
+
+  border-radius: 50%;
+
+  background: #0b0b0b;
+
+  color: white;
+
+  display: flex;
+
+  align-items: center;
+
+  justify-content: center;
+
+  font-size: 15px;
+}
+
+.hero-floating-card div:last-child {
+  display: flex;
+
+  flex-direction: column;
+
+  gap: 3px;
+}
+
+.hero-floating-card span {
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
   text-transform: uppercase;
+
   letter-spacing: 1px;
-  cursor: pointer;
+
+  color: #888;
 }
 
-.hero-footer span:hover {
-  color: var(--c-accent);
+.hero-floating-card strong {
+  font-family: Georgia, "Times New Roman", serif;
+
+  font-size: 12px;
+
+  font-weight: 400;
+
+  color: #222;
+}
+
+
+/* =========================================
+   VERTICAL TEXT
+========================================= */
+
+.hero-vertical-text {
+  position: absolute;
+
+  right: -20px;
+
+  top: 50%;
+
+  transform: rotate(90deg) translateX(50%);
+
+  transform-origin: right center;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 8px;
+
+  letter-spacing: 3px;
+
+  color: #888;
+
+  white-space: nowrap;
+}
+
+
+/* =========================================
+   BOTTOM LINE
+========================================= */
+
+.hero-bottom-line {
+  position: absolute;
+
+  bottom: 30px;
+
+  left: 7%;
+
+  display: flex;
+
+  align-items: center;
+
+  gap: 12px;
+
+  font-family: Arial, sans-serif;
+
+  font-size: 9px;
+
+  letter-spacing: 3px;
+
+  color: #888;
+}
+
+.bottom-dot {
+  width: 4px;
+  height: 4px;
+
+  border-radius: 50%;
+
+  background: #164c9c;
+}
+
+
+/* =========================================
+   TABLET
+========================================= */
+
+@media (max-width: 1100px) {
+
+  .safal-hero {
+    padding-left: 5%;
+    padding-right: 5%;
+
+    grid-template-columns: 55% 45%;
+  }
+
+  .safal-hero h1 {
+    font-size: 65px;
+  }
+
+  .hero-circle {
+    width: 420px;
+    height: 420px;
+  }
+
+  .hero-image-container {
+    width: 330px;
+    height: 410px;
+  }
+
+  .hero-floating-card {
+    left: 0;
+  }
+
+  .hero-vertical-text {
+    display: none;
+  }
+}
+
+
+/* =========================================
+   MOBILE
+========================================= */
+
+@media (max-width: 800px) {
+
+  .safal-hero {
+    min-height: auto;
+
+    display: flex;
+
+    flex-direction: column;
+
+    padding: 60px 25px 80px;
+  }
+
+  .hero-orbit {
+    width: 450px;
+    height: 450px;
+
+    right: -180px;
+
+    top: 400px;
+  }
+
+  .safal-hero-content {
+    width: 100%;
+
+    padding: 0;
+  }
+
+  .safal-hero h1 {
+    font-size: clamp(50px, 13vw, 75px);
+
+    letter-spacing: -3px;
+  }
+
+  .hero-description {
+    font-size: 14px;
+
+    max-width: 450px;
+  }
+
+  .hero-stats {
+    margin-top: 40px;
+
+    gap: 15px;
+  }
+
+  .hero-stat strong {
+    font-size: 21px;
+  }
+
+  .hero-stat span {
+    font-size: 7px;
+  }
+
+  .safal-hero-visual {
+    width: 100%;
+
+    min-height: 530px;
+
+    margin-top: 60px;
+  }
+
+  .hero-circle {
+    width: 430px;
+    height: 430px;
+  }
+
+  .hero-image-container {
+    width: 310px;
+    height: 390px;
+  }
+
+  .hero-floating-card {
+    left: 0;
+
+    bottom: 35px;
+  }
+
+  .hero-bottom-line {
+    left: 25px;
+  }
+}
+
+
+/* =========================================
+   SMALL MOBILE
+========================================= */
+
+@media (max-width: 500px) {
+
+  .safal-hero {
+    padding: 45px 18px 70px;
+  }
+
+  .hero-label {
+    font-size: 8px;
+
+    letter-spacing: 2px;
+  }
+
+  .safal-hero h1 {
+    font-size: 48px;
+
+    letter-spacing: -2px;
+  }
+
+  .hero-description {
+    font-size: 13px;
+
+    line-height: 1.6;
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+
+    align-items: stretch;
+
+    width: 100%;
+  }
+
+  .hero-btn {
+    width: 100%;
+  }
+
+  .hero-stats {
+    justify-content: space-between;
+
+    gap: 8px;
+  }
+
+  .hero-stat {
+    gap: 5px;
+  }
+
+  .hero-stat-divider {
+    height: 28px;
+  }
+
+  .hero-stat strong {
+    font-size: 18px;
+  }
+
+  .hero-stat span {
+    display: none;
+  }
+
+  .safal-hero-visual {
+    min-height: 450px;
+
+    margin-top: 40px;
+  }
+
+  .hero-circle {
+    width: 340px;
+    height: 340px;
+  }
+
+  .hero-image-container {
+    width: 260px;
+    height: 330px;
+  }
+
+  .hero-floating-card {
+    width: 165px;
+
+    left: 0;
+
+    padding: 11px;
+  }
+
+  .hero-bottom-line {
+    display: none;
+  }
 }

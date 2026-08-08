@@ -1,85 +1,90 @@
-import React, { useState } from "react";
+import React from "react";
 import "./Navbar.css";
-import safallogo from "../../assets/images/safallogo.png";
+
+import safalLogo from "../../assets/images/safallogo.png";
 
 function Navbar() {
-  const [menuOpen, setMenuOpen] = useState(false);
-
-  const closeMenu = () => {
-    setMenuOpen(false);
+  const handleQuoteClick = () => {
+    document.getElementById("contact")?.scrollIntoView({
+      behavior: "smooth",
+    });
   };
 
   return (
-    <nav className="navbar">
+    <header className="navbar-wrapper">
 
-      {/* Logo */}
-      <a href="#home" className="navbar-logo">
-        <img src={safallogo} alt="Safal Cosmetics" />
-      </a>
+      <nav className="navbar">
 
-      {/* Desktop Navigation */}
-      <div className="navbar-links">
-        <a href="#home">Home</a>
-        <a href="#about">About us</a>
-        <a href="#services">Services</a>
-        <a href="#clients">Valued Clients</a>
-        <a href="#contact">Contact us</a>
-      </div>
+        {/* ================================
+            LOGO
+        ================================= */}
 
-      {/* Right Side */}
-      <div className="navbar-actions">
+        <a href="#home" className="navbar-logo">
+          <img
+            src={safalLogo}
+            alt="Safal Cosmetics"
+          />
+        </a>
 
-        {/* Search */}
-        <button className="search-button" aria-label="Search">
-          <svg
-            viewBox="0 0 24 24"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <circle cx="11" cy="11" r="6.5" />
-            <path d="M16 16L21 21" />
-          </svg>
+
+        {/* ================================
+            NAVIGATION
+        ================================= */}
+
+        <div className="navbar-links">
+
+          <a href="#home">
+            Home
+          </a>
+
+          <a href="#about">
+            About us
+          </a>
+
+          <a href="#services">
+            Services
+          </a>
+
+          <a href="#clients">
+            Valued Clients
+          </a>
+
+          <a href="#contact">
+            Contact us
+          </a>
+
+        </div>
+
+
+        {/* ================================
+            REQUEST QUOTE
+        ================================= */}
+
+        <button
+          className="quote-button"
+          onClick={handleQuoteClick}
+        >
+          <span>Request a Quote</span>
+
+          <span className="quote-arrow">
+            ↗
+          </span>
         </button>
 
-        {/* Mobile Menu Button */}
+
+        {/* Mobile menu button */}
         <button
-          className={`menu-button ${menuOpen ? "active" : ""}`}
-          onClick={() => setMenuOpen(!menuOpen)}
-          aria-label="Toggle menu"
-          aria-expanded={menuOpen}
+          className="mobile-menu"
+          aria-label="Open navigation"
         >
           <span></span>
           <span></span>
+          <span></span>
         </button>
 
-      </div>
+      </nav>
 
-      {/* Mobile Navigation */}
-      <div className={`mobile-menu ${menuOpen ? "show" : ""}`}>
-
-        <a href="#home" onClick={closeMenu}>
-          Home
-        </a>
-
-        <a href="#about" onClick={closeMenu}>
-          About us
-        </a>
-
-        <a href="#services" onClick={closeMenu}>
-          Services
-        </a>
-
-        <a href="#clients" onClick={closeMenu}>
-          Valued Clients
-        </a>
-
-        <a href="#contact" onClick={closeMenu}>
-          Contact us
-        </a>
-
-      </div>
-
-    </nav>
+    </header>
   );
 }
 

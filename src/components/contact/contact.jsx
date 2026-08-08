@@ -156,7 +156,7 @@ function Contact() {
             <div className="google-form-container">
 
               <iframe
-                src="https://docs.google.com/forms/d/e/1FAIpQLScUGnoDmNYbXIy3tf0g-UzqkfZokgsWcj18VoQ-fkz3C8IfYw/viewform?embedded=true"
+                src="https://docs.google.com/forms/d/e/1FAIpQLSdm-vCMxguLdQTMSfg7o_JrHi22_PPxqnMG-RgRQ0MCI4fLZA/viewform?usp=header"
                 title="Safal Cosmetics Enquiry Form"
                 className="google-form"
               >

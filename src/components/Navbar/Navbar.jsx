@@ -1,91 +1,57 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import "./Navbar.css";
 
 import safalLogo from "../../assets/images/safallogo.png";
 
-function Navbar() {
-  const handleQuoteClick = () => {
-    document.getElementById("contact")?.scrollIntoView({
-      behavior: "smooth",
-    });
-  };
+const Navbar = () => {
+  const [scrolled, setScrolled] = useState(false);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      setScrolled(window.scrollY > 30);
+    };
+
+    window.addEventListener("scroll", handleScroll);
+
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <header className="navbar-wrapper">
-
+    <header className={`navbar-wrapper ${scrolled ? "navbar-scrolled" : ""}`}>
       <nav className="navbar">
 
-        {/* ================================
-            LOGO
-        ================================= */}
-
-        <a href="#home" className="navbar-logo">
+        {/* Logo */}
+        <a href="#home" className="navbar-brand">
           <img
             src={safalLogo}
             alt="Safal Cosmetics"
+            className="navbar-logo"
           />
         </a>
 
-
-        {/* ================================
-            NAVIGATION
-        ================================= */}
-
+        {/* Navigation Links */}
         <div className="navbar-links">
-
-          <a href="#home">
-            Home
-          </a>
-
-          <a href="#about">
-            About us
-          </a>
-
-          <a href="#services">
-            Services
-          </a>
-
-          <a href="#clients">
-            Valued Clients
-          </a>
-
-          <a href="#contact">
-            Contact us
-          </a>
-
+          <a href="#home">Home</a>
+          <a href="#about">About Us</a>
+          <a href="#services">Capabilities</a>
+          <a href="#clients">Valued Clients</a>
+          <a href="#contact">Contact</a>
         </div>
 
-
-        {/* ================================
-            REQUEST QUOTE
-        ================================= */}
-
-        <button
-          className="quote-button"
-          onClick={handleQuoteClick}
-        >
+        {/* CTA */}
+        <a href="#contact" className="quote-btn">
           <span>Request a Quote</span>
 
-          <span className="quote-arrow">
+          <span className="quote-icon">
             ↗
           </span>
-        </button>
-
-
-        {/* Mobile menu button */}
-        <button
-          className="mobile-menu"
-          aria-label="Open navigation"
-        >
-          <span></span>
-          <span></span>
-          <span></span>
-        </button>
+        </a>
 
       </nav>
-
     </header>
   );
-}
+};
 
 export default Navbar;

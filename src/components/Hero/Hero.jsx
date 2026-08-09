@@ -1,121 +1,166 @@
 import React from "react";
 import "./Hero.css";
 
-import heroImage from "../../assets/images/hero.png";
+import heroImage from "../../assets/images/hero2.png";
 
-function Hero() {
+const Hero = () => {
   return (
-    <section className="safal-hero" id="home">
+    <section className="hero" id="home">
 
-      {/* Background decorative element */}
-      <div className="hero-orbit"></div>
+      {/* Background decorative elements */}
+      <div className="hero-grid"></div>
+      <div className="hero-glow hero-glow-one"></div>
+      <div className="hero-glow hero-glow-two"></div>
 
-      {/* LEFT CONTENT */}
-      <div className="safal-hero-content">
+      <div className="hero-container">
 
-        
+        {/* LEFT CONTENT */}
+        <div className="hero-content">
 
-        <h1>
-          Crafting Fragrance.
-          <br />
-          <span>Building Brands.</span>
-        </h1>
+          <div className="hero-eyebrow">
+            <span className="eyebrow-line"></span>
+            <span>PRIVATE LABEL & CONTRACT MANUFACTURING</span>
+          </div>
 
-        <p className="hero-description">
-          From concept to production, Safal Cosmetics delivers
-          premium fragrance solutions for businesses seeking
-          quality, consistency and scale.
-        </p>
+          <h1>
+            We Create
+            <span className="hero-outline"> Fragrances</span>
+            <br />
+            For Your
+            <span className="hero-blue"> Brand.</span>
+          </h1>
 
-        {/* Buttons */}
-        <div className="hero-buttons">
+          <p className="hero-description">
+            From concept and formulation to manufacturing, packaging and
+            delivery — Safal Cosmetics transforms fragrance ideas into
+            products ready for the market.
+          </p>
 
-          <a
-            href="#services"
-            className="hero-btn hero-btn-primary"
-          >
-            Explore Our Services
-            <span>↗</span>
-          </a>
+          <div className="hero-buttons">
+            <a href="#services" className="hero-primary-btn">
+              <span>Explore Our Capabilities</span>
+              <span className="hero-arrow">↗</span>
+            </a>
 
-          <a
-            href="#contact"
-            className="hero-btn hero-btn-secondary"
-          >
-            Partner With Us
-          </a>
+            <a href="#contact" className="hero-secondary-btn">
+              Start Your Project
+              <span>→</span>
+            </a>
+          </div>
+
+          {/* Bottom info */}
+          <div className="hero-info">
+
+            <div className="hero-info-item">
+              <span className="info-number">01</span>
+
+              <div>
+                <span className="info-title">CONCEPT</span>
+                <span className="info-text">
+                  Your vision begins here
+                </span>
+              </div>
+            </div>
+
+            <div className="info-divider"></div>
+
+            <div className="hero-info-item">
+              <span className="info-number">02</span>
+
+              <div>
+                <span className="info-title">CREATION</span>
+                <span className="info-text">
+                  From formula to final product
+                </span>
+              </div>
+            </div>
+
+          </div>
 
         </div>
 
-        {/* Stats */}
-        <div className="hero-stats">
 
-          <div className="hero-stat">
-            <strong>25+</strong>
-            <span>Years of<br />Expertise</span>
+        {/* RIGHT IMAGE */}
+        <div className="hero-visual">
+
+          <div className="image-frame">
+
+            <img
+              src={heroImage}
+              alt="Safal Cosmetics Manufacturing"
+              className="hero-image"
+            />
+
+            <div className="image-overlay"></div>
+
           </div>
 
-          <div className="hero-stat-divider"></div>
 
-          <div className="hero-stat">
-            <strong>360°</strong>
-            <span>Fragrance<br />Solutions</span>
+          
+
+
+          {/* Floating badge */}
+          <div className="hero-floating-card">
+
+            <div className="floating-icon">
+              ✦
+            </div>
+
+            <div>
+              <span>OUR EXPERTISE</span>
+              <strong>Perfume Solutions</strong>
+            </div>
+
           </div>
 
-          <div className="hero-stat-divider"></div>
 
-          <div className="hero-stat">
-            <strong>B2B</strong>
-            <span>Manufacturing<br />Partner</span>
-          </div>
+          {/* Decorative outline */}
+          <div className="hero-circle-outline"></div>
+
+          <div className="hero-small-square"></div>
 
         </div>
 
       </div>
 
 
-      {/* RIGHT IMAGE */}
-      <div className="safal-hero-visual">
+      {/* Bottom scrolling text */}
+      <div className="hero-marquee">
 
-        {/* Large circle behind product */}
-        <div className="hero-circle"></div>
+        <div className="marquee-track">
 
-        {/* Image container */}
-        <div className="hero-image-container">
+          <span>FRAGRANCE FORMULATION</span>
+          <i>✦</i>
 
-          <img
-            src={heroImage}
-            alt="Safal Cosmetics fragrance manufacturing"
-          />
+          <span>PRIVATE LABEL</span>
+          <i>✦</i>
 
-        </div>
+          <span>CONTRACT MANUFACTURING</span>
+          <i>✦</i>
 
-        {/* Floating card */}
-        <div className="hero-floating-card">
+          <span>PERFUME DEVELOPMENT</span>
+          <i>✦</i>
 
-          <div className="floating-icon">
-            ✦
-          </div>
+          {/* Duplicate for smooth infinite loop */}
 
-          <div>
-            <span>Our Expertise</span>
-            <strong>Perfume Solutions</strong>
-          </div>
+          <span>FRAGRANCE FORMULATION</span>
+          <i>✦</i>
 
-        </div>
+          <span>PRIVATE LABEL</span>
+          <i>✦</i>
 
-        {/* Vertical text */}
-        <div className="hero-vertical-text">
-          SAFAL COSMETICS · FRAGRANCE SOLUTIONS
+          <span>CONTRACT MANUFACTURING</span>
+          <i>✦</i>
+
+          <span>PERFUME DEVELOPMENT</span>
+          <i>✦</i>
+
         </div>
 
       </div>
-
-
-      
 
     </section>
   );
-}
+};
 
 export default Hero;

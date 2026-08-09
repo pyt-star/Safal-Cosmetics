@@ -1,182 +1,94 @@
-import React from "react";
 import "./Footer.css";
-
 import safalLogo from "../../assets/images/safallogo.png";
 
-function Footer() {
-  const scrollToTop = () => {
-    window.scrollTo({
-      top: 0,
+const Footer = () => {
+  const currentYear = new Date().getFullYear();
+
+  const scrollToSection = (id) => {
+    document.getElementById(id)?.scrollIntoView({
       behavior: "smooth",
     });
   };
 
   return (
     <footer className="footer">
-
-      {/* =================================
-          TOP FOOTER
-      ================================= */}
-
       <div className="footer-main">
-
-        {/* Brand */}
-        <div className="footer-brand">
-
-          <img
-            src={safalLogo}
-            alt="Safal Cosmetics"
-            className="footer-logo"
-          />
+        
+        {/* Company */}
+        <div className="footer-company">
+          <div className="footer-logo-box">
+            <img src={safalLogo} alt="Safal Cosmetics" />
+          </div>
 
           <p>
-            Your trusted partner for private label,
-            contract manufacturing and fragrance
-            solutions.
+            Premium private-label fragrance and personal care manufacturing
+            solutions, helping brands turn ideas into products.
           </p>
 
           <button
-            className="footer-enquiry"
-            onClick={() => {
-              document
-                .getElementById("contact")
-                ?.scrollIntoView({
-                  behavior: "smooth",
-                });
-            }}
+            className="footer-quote-btn"
+            onClick={() => scrollToSection("contact")}
           >
-            Start a Conversation
-            <span>↗</span>
+            Request a Quote <span>↗</span>
           </button>
-
         </div>
 
-
-        {/* Navigation */}
+        {/* Quick Links */}
         <div className="footer-column">
+          <h3>Explore</h3>
 
-          <h4>
-            NAVIGATION
-          </h4>
-
-          <a href="#home">Home</a>
-
-          <a href="#about">About Us</a>
-
-          <a href="#services">Services</a>
-
-          <a href="#clients">Valued Clients</a>
-
-          <a href="#contact">Contact Us</a>
-
+          <button onClick={() => scrollToSection("home")}>Home</button>
+          <button onClick={() => scrollToSection("about")}>About Us</button>
+          <button onClick={() => scrollToSection("services")}>Services</button>
+          <button onClick={() => scrollToSection("brands")}>
+            Valued Clients
+          </button>
+          <button onClick={() => scrollToSection("contact")}>
+            Contact Us
+          </button>
         </div>
 
-
-        {/* Services */}
+        {/* Solutions */}
         <div className="footer-column">
+          <h3>Our Solutions</h3>
 
-          <h4>
-            SERVICES
-          </h4>
-
-          <a href="#services">
-            Product Development
-          </a>
-
-          <a href="#services">
-            Private Label
-          </a>
-
-          <a href="#services">
-            Contract Manufacturing
-          </a>
-
-          <a href="#services">
-            Filling & Packing
-          </a>
-
-          <a href="#services">
-            Gift Sets
-          </a>
-
+          <a href="#services">Private Label Manufacturing</a>
+          <a href="#services">Fragrance Development</a>
+          <a href="#services">Product Formulation</a>
+          <a href="#services">Packaging Solutions</a>
+          <a href="#services">Contract Manufacturing</a>
         </div>
-
 
         {/* Contact */}
         <div className="footer-column footer-contact">
+          <h3>Get in Touch</h3>
 
-          <h4>
-            CONTACT
-          </h4>
+          <p>Gujarat, India</p>
 
-          <span>
-            Have a product idea?
-          </span>
-
-          <a
-            href="#contact"
-            className="footer-contact-link"
-          >
-            Send an Enquiry ↗
+          <a href="mailto:info@safalcosmetics.com">
+            info@safalcosmetics.com
           </a>
 
-          <span className="footer-contact-label">
-            EMAIL
-          </span>
-
-          <a href="mailto:safalcosmetics@gmail.com">
-            safalcosmetics@gmail.com
-          </a>
-
+          <p>
+            Let's build your next fragrance brand together.
+          </p>
         </div>
-
       </div>
 
-
-      {/* =================================
-          LARGE BRAND TEXT
-      ================================= */}
-
-      <div className="footer-brand-text">
-        SAFAL
-      </div>
-
-
-      {/* =================================
-          BOTTOM BAR
-      ================================= */}
+      <div className="footer-divider"></div>
 
       <div className="footer-bottom">
-
-        <div className="footer-copyright">
-          © {new Date().getFullYear()} Safal Cosmetics.
-          All rights reserved.
-        </div>
+        <p>© {currentYear} Safal Cosmetics. All rights reserved.</p>
 
         <div className="footer-bottom-links">
-
-          <a href="#privacy">
-            Privacy Policy
-          </a>
-
-          <a href="#terms">
-            Terms & Conditions
-          </a>
-
+          <a href="#privacy">Privacy Policy</a>
+          <a href="#terms">Terms & Conditions</a>
         </div>
 
-        <button
-          className="back-top"
-          onClick={scrollToTop}
-          aria-label="Back to top"
-        >
-          ↑
-        </button>
-
+        <p>Crafting Fragrance. Building Brands.</p>
       </div>
-
     </footer>
   );
-}
+};
 
 export default Footer;

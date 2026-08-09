@@ -1,163 +1,111 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import "./Products.css";
 
-const services = [
+const products = [
   {
     number: "01",
-    title: "End-to-End Solutions",
+    icon: "✦",
+    title: "Fragrance Solutions",
+    slug: "fragrance-solutions",
     description:
-      "Complete cosmetic solutions from product concept and development to filling, packing and final delivery.",
-    tag: "FULL SERVICE",
+      "Custom fragrance development and manufacturing for perfumes, deodorants, body sprays and personal care products.",
+    tags: ["Perfumes", "Deodorants", "Body Sprays"],
   },
   {
     number: "02",
-    title: "Product Design & Development",
+    icon: "◉",
+    title: "Aerosol Products",
+    slug: "aerosol-products",
     description:
-      "Transform your product idea into reality through concept development, mock-ups, formulation and product design.",
-    tag: "DEVELOPMENT",
+      "Reliable aerosol manufacturing solutions developed with consistent quality, performance and production expertise.",
+    tags: ["Aerosols", "Sprays", "Air Care"],
   },
   {
     number: "03",
-    title: "Component Solutions",
+    icon: "✿",
+    title: "Personal Care",
+    slug: "personal-care",
     description:
-      "Local as well as import and export solutions for cosmetic components and packaging requirements.",
-    tag: "COMPONENTS",
+      "High-quality personal care formulations tailored to the needs of your brand and target customers.",
+    tags: ["Skin Care", "Body Care", "Grooming"],
   },
   {
     number: "04",
-    title: "Quality Inspection",
+    icon: "◇",
+    title: "Private Label Manufacturing",
+    slug: "private-label-manufacturing",
     description:
-      "Need-based quality inspection services to help maintain consistency and quality throughout production.",
-    tag: "QUALITY",
-  },
-  {
-    number: "05",
-    title: "Cosmetic Expertise",
-    description:
-      "An experienced team with extensive knowledge across cosmetic product development and manufacturing.",
-    tag: "EXPERTISE",
-  },
-  {
-    number: "06",
-    title: "Filling & Packing",
-    description:
-      "Filling services for perfumes, air fresheners, aftershave lotions, sanitizers, attars and disinfectant sprays.",
-    tag: "MANUFACTURING",
-  },
-  {
-    number: "07",
-    title: "Gift Sets",
-    description:
-      "Create complete and customized cosmetic gift sets with coordinated product and packaging solutions.",
-    tag: "GIFT SETS",
+      "From concept and formulation to production and packaging, we help transform your idea into a finished product.",
+    tags: ["B2B", "Custom Branding", "Packaging"],
   },
 ];
 
-function Products() {
+const Products = () => {
+  const [activeCard, setActiveCard] = useState(0);
+  const navigate = useNavigate();
+
   return (
     <section className="products-section" id="services">
+      <div className="products-container">
 
-      {/* Header */}
-      <div className="products-header">
-
-        
-
-        <div className="products-title-row">
+        <div className="products-heading">
+          <span className="section-label">WHAT WE CREATE</span>
 
           <h2>
-            Services built
-            <br />
-            <span>around your brand.</span>
+            Solutions Built For
+            <span> Your Brand.</span>
           </h2>
 
           <p>
-            From the first product idea to the finished package,
-            Safal Cosmetics provides the expertise and support
-            needed to bring cosmetic brands to life.
+            From fragrance formulation to complete private-label manufacturing,
+            Safal Cosmetics brings ideas to life with quality and precision.
           </p>
+        </div>
 
+        <div className="products-grid">
+          {products.map((product, index) => (
+            <div
+              className={`product-card ${
+                activeCard === index ? "active-card" : ""
+              }`}
+              key={index}
+              onMouseEnter={() => setActiveCard(index)}
+            >
+              <div className="product-card-top">
+                <span className="product-number">
+                  {product.number}
+                </span>
+
+                <div className="product-icon">
+                  {product.icon}
+                </div>
+              </div>
+
+              <h3>{product.title}</h3>
+
+              <p>{product.description}</p>
+
+              <div className="product-tags">
+                {product.tags.map((tag, tagIndex) => (
+                  <span key={tagIndex}>{tag}</span>
+                ))}
+              </div>
+
+              <button
+                className="product-link"
+                onClick={() => navigate(`/services/${product.slug}`)}
+              >
+                Explore Solution
+                <span>↗</span>
+              </button>
+            </div>
+          ))}
         </div>
 
       </div>
-
-
-      {/* Decorative line */}
-      <div className="products-line">
-        <span></span>
-      </div>
-
-
-      {/* Cards */}
-      <div className="services-grid">
-
-        {services.map((service) => (
-          <article
-            className="service-card"
-            key={service.number}
-          >
-
-            {/* Top */}
-            <div className="service-top">
-
-              <div className="service-number">
-                {service.number}
-              </div>
-
-              <div className="service-arrow">
-                ↗
-              </div>
-
-            </div>
-
-
-            {/* Content */}
-            <div className="service-content">
-
-              <div className="service-tag">
-                {service.tag}
-              </div>
-
-              <h3>
-                {service.title}
-              </h3>
-
-              <p>
-                {service.description}
-              </p>
-
-            </div>
-
-
-            
-
-          </article>
-        ))}
-
-      </div>
-
-
-      {/* Bottom CTA */}
-      <div className="services-cta">
-
-        <div>
-          <span className="cta-small">
-            HAVE A PRODUCT IDEA?
-          </span>
-
-          <h3>
-            Let's build it together.
-          </h3>
-        </div>
-
-        <a href="#contact">
-          Discuss Your Project
-          <span>↗</span>
-        </a>
-
-      </div>
-
     </section>
   );
-}
+};
 
 export default Products;

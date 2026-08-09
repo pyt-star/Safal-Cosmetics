@@ -3,139 +3,149 @@
 ========================================= */
 
 .navbar-wrapper {
-  position: relative;
+  position: sticky;
+
+  top: 0;
 
   width: 100%;
 
-  padding: 18px 20px;
+  z-index: 9999;
 
-  box-sizing: border-box;
+  background: rgba(247, 245, 239, 0.96);
 
-  z-index: 1000;
+  border-bottom: 1px solid rgba(18, 32, 48, 0.1);
 
-  background: #f6f5ef;
+  transition:
+    background 0.3s ease,
+    box-shadow 0.3s ease,
+    padding 0.3s ease;
 }
 
 
 /* =========================================
-   NAVBAR
+   SCROLL STATE
+========================================= */
+
+.navbar-wrapper.navbar-scrolled {
+  background: rgba(247, 245, 239, 0.98);
+
+  box-shadow:
+    0 8px 30px rgba(15, 24, 35, 0.08);
+}
+
+
+/* =========================================
+   MAIN NAVBAR
 ========================================= */
 
 .navbar {
-  width: 100%;
+  max-width: 1500px;
 
-  height: 84px;
+  height: 88px;
 
-  padding: 0 18px;
+  margin: 0 auto;
 
-  box-sizing: border-box;
+  padding: 0 48px;
 
   display: flex;
 
   align-items: center;
 
-  background: #0b0b0b;
+  justify-content: space-between;
 
-  border-radius: 20px;
+  box-sizing: border-box;
 
-  border: 1px solid rgba(255, 255, 255, 0.05);
+  transition: height 0.3s ease;
+}
 
-  box-shadow:
-    0 8px 30px rgba(0, 0, 0, 0.08);
+
+.navbar-scrolled .navbar {
+  height: 74px;
 }
 
 
 /* =========================================
-   LOGO CONTAINER
+   LOGO
 ========================================= */
 
-.navbar-logo {
-  width: 220px;
+.navbar-brand {
+  width: 205px;
 
-  height: 62px;
-
-  flex-shrink: 0;
+  height: 70px;
 
   display: flex;
 
   align-items: center;
-
-  justify-content: center;
-
-  padding: 2px 8px;
-
-  box-sizing: border-box;
-
-  background: #f6f5ef;
-
-  border-radius: 13px;
 
   text-decoration: none;
 
-  overflow: hidden;
-
-  transition:
-    transform 0.25s ease,
-    background 0.25s ease;
-}
-
-.navbar-logo:hover {
-  transform: translateY(-1px);
-
-  background: #ffffff;
+  flex-shrink: 0;
 }
 
 
-/* =========================================
-   LOGO IMAGE
-========================================= */
+.navbar-logo {
+  width: 190px;
 
-.navbar-logo img {
-  width: 215px;
-
-  height: 60px;
+  height: auto;
 
   display: block;
 
   object-fit: contain;
 
-  transform: scale(1.18);
+  transform: scale(1.15);
+
+  transform-origin: left center;
+
+  transition:
+    transform 0.3s ease;
+}
+
+
+.navbar-brand:hover .navbar-logo {
+  transform: scale(1.19);
 }
 
 
 /* =========================================
-   NAVIGATION
+   NAVIGATION LINKS
 ========================================= */
 
 .navbar-links {
-  flex: 1;
-
   display: flex;
 
   align-items: center;
 
-  justify-content: center;
-
   gap: 42px;
 
-  margin-left: 30px;
+  margin-left: auto;
+
+  margin-right: 48px;
 }
+
 
 .navbar-links a {
   position: relative;
 
-  color: #e9e9e9;
+  color: #1b2028;
 
   text-decoration: none;
 
-  font-family: Georgia, "Times New Roman", serif;
+  font-family: "Georgia", serif;
 
-  font-size: 14px;
+  font-size: 15px;
+
+  letter-spacing: 0.01em;
 
   white-space: nowrap;
 
-  transition: color 0.25s ease;
+  padding: 8px 0;
+
+  transition:
+    color 0.25s ease;
 }
+
+
+/* Underline */
 
 .navbar-links a::after {
   content: "";
@@ -144,20 +154,23 @@
 
   left: 0;
 
-  bottom: -7px;
+  bottom: 2px;
 
   width: 0;
 
   height: 1px;
 
-  background: #5f8dcc;
+  background: #24508d;
 
-  transition: width 0.25s ease;
+  transition:
+    width 0.3s ease;
 }
+
 
 .navbar-links a:hover {
-  color: #ffffff;
+  color: #24508d;
 }
+
 
 .navbar-links a:hover::after {
   width: 100%;
@@ -165,61 +178,57 @@
 
 
 /* =========================================
-   REQUEST A QUOTE
+   REQUEST QUOTE BUTTON
 ========================================= */
 
-.quote-button {
-  flex-shrink: 0;
+.quote-btn {
+  min-width: 165px;
 
   height: 48px;
 
-  padding: 0 8px 0 18px;
+  padding: 5px 6px 5px 20px;
 
   display: flex;
 
   align-items: center;
 
+  justify-content: space-between;
+
   gap: 14px;
 
-  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-sizing: border-box;
 
-  border-radius: 30px;
-
-  background: #164c9c;
+  background: #24508d;
 
   color: #ffffff;
 
-  cursor: pointer;
+  text-decoration: none;
+
+  border-radius: 2px;
 
   font-family: Arial, sans-serif;
 
-  font-size: 11px;
+  font-size: 12px;
 
-  font-weight: 500;
-
-  white-space: nowrap;
+  letter-spacing: 0.02em;
 
   transition:
-    background 0.25s ease,
-    transform 0.25s ease,
-    box-shadow 0.25s ease;
+    background 0.3s ease,
+    transform 0.3s ease;
 }
 
-.quote-button:hover {
-  background: #1d5dbb;
+
+.quote-btn:hover {
+  background: #173d70;
 
   transform: translateY(-2px);
-
-  box-shadow:
-    0 8px 25px rgba(22, 76, 156, 0.3);
 }
 
-.quote-arrow {
-  width: 34px;
 
-  height: 34px;
+.quote-icon {
+  width: 36px;
 
-  border-radius: 50%;
+  height: 36px;
 
   display: flex;
 
@@ -227,242 +236,143 @@
 
   justify-content: center;
 
-  background: #ffffff;
+  background: #f7f5ef;
 
-  color: #111111;
+  color: #24508d;
 
-  font-size: 16px;
+  font-size: 17px;
 
-  transition: transform 0.25s ease;
+  transition:
+    transform 0.3s ease;
 }
 
-.quote-button:hover .quote-arrow {
+
+.quote-btn:hover .quote-icon {
   transform: translate(2px, -2px);
 }
 
 
 /* =========================================
-   MOBILE MENU
+   RESPONSIVE
 ========================================= */
 
-.mobile-menu {
-  display: none;
+@media (max-width: 1200px) {
 
-  width: 44px;
-
-  height: 44px;
-
-  margin-left: 10px;
-
-  border: 1px solid rgba(255, 255, 255, 0.15);
-
-  border-radius: 50%;
-
-  background: transparent;
-
-  cursor: pointer;
-
-  flex-direction: column;
-
-  align-items: center;
-
-  justify-content: center;
-
-  gap: 4px;
-}
-
-.mobile-menu span {
-  width: 17px;
-
-  height: 1px;
-
-  background: #ffffff;
-}
-
-
-/* =========================================
-   TABLET
-========================================= */
-
-@media (max-width: 1150px) {
-
-  .navbar-logo {
-    width: 190px;
-  }
-
-  .navbar-logo img {
-    width: 180px;
-
-    transform: scale(1.15);
+  .navbar {
+    padding: 0 30px;
   }
 
   .navbar-links {
     gap: 25px;
 
-    margin-left: 15px;
+    margin-right: 30px;
   }
 
   .navbar-links a {
-    font-size: 13px;
+    font-size: 14px;
   }
+
 }
 
 
-/* =========================================
-   SMALL TABLET
-========================================= */
-
-@media (max-width: 900px) {
-
-  .navbar-wrapper {
-    padding: 14px 15px;
-  }
+@media (max-width: 950px) {
 
   .navbar {
-    height: 72px;
+    padding: 0 20px;
+  }
 
-    padding: 0 12px;
-
-    border-radius: 16px;
+  .navbar-brand {
+    width: 170px;
   }
 
   .navbar-logo {
-    width: 175px;
-
-    height: 54px;
-  }
-
-  .navbar-logo img {
     width: 165px;
-
-    height: 52px;
-
-    transform: scale(1.12);
   }
 
   .navbar-links {
     gap: 16px;
 
-    margin-left: 10px;
+    margin-right: 20px;
   }
 
   .navbar-links a {
+    font-size: 12px;
+  }
+
+  .quote-btn {
+    min-width: 140px;
+
     font-size: 11px;
   }
 
-  .quote-button {
-    height: 42px;
-
-    padding-left: 14px;
-
-    font-size: 9px;
-  }
-
-  .quote-arrow {
-    width: 30px;
-
-    height: 30px;
-  }
 }
 
 
-/* =========================================
-   MOBILE
-========================================= */
-
-@media (max-width: 720px) {
-
-  .navbar-wrapper {
-    padding: 12px;
-  }
+@media (max-width: 760px) {
 
   .navbar {
-    height: 68px;
+    height: 70px;
 
-    border-radius: 15px;
+    padding: 0 18px;
+  }
+
+  .navbar-scrolled .navbar {
+    height: 66px;
+  }
+
+  .navbar-brand {
+    width: 155px;
   }
 
   .navbar-logo {
-    width: 170px;
+    width: 150px;
 
-    height: 50px;
-  }
-
-  .navbar-logo img {
-    width: 155px;
-
-    height: 48px;
-
-    transform: scale(1.1);
+    transform: scale(1.08);
   }
 
   .navbar-links {
     display: none;
   }
 
-  .quote-button {
+  .quote-btn {
     margin-left: auto;
 
-    height: 40px;
+    min-width: auto;
 
-    padding-left: 14px;
-
-    gap: 8px;
+    padding-left: 15px;
   }
 
-  .quote-button span:first-child {
-    font-size: 9px;
-  }
-
-  .quote-arrow {
-    width: 28px;
-
-    height: 28px;
-
-    font-size: 14px;
-  }
-
-  .mobile-menu {
-    display: flex;
-  }
 }
 
 
-/* =========================================
-   SMALL MOBILE
-========================================= */
-
 @media (max-width: 480px) {
 
-  .navbar-logo {
-    width: 145px;
-
-    height: 48px;
-
-    padding: 2px 5px;
-  }
-
-  .navbar-logo img {
-    width: 140px;
-
-    height: 46px;
-
-    transform: scale(1.08);
-  }
-
-  .quote-button {
-    height: 38px;
-
-    padding-left: 11px;
-  }
-
-  .quote-button span:first-child {
+  .quote-btn span:first-child {
     display: none;
   }
 
-  .quote-arrow {
-    width: 29px;
+  .quote-btn {
+    width: 48px;
 
-    height: 29px;
+    min-width: 48px;
+
+    padding: 5px;
+
+    justify-content: center;
   }
+
+  .quote-icon {
+    width: 36px;
+
+    height: 36px;
+  }
+
+  .navbar-brand {
+    width: 145px;
+  }
+
+  .navbar-logo {
+    width: 140px;
+  }
+
 }

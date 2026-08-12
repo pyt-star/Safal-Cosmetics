@@ -1,5 +1,5 @@
 .footer {
-  background: #111214;
+  background: #081914;
   color: #f4f0e8;
   padding: 70px 7% 24px;
   margin-top: 80px;
@@ -276,3 +276,4 @@
     flex-wrap: wrap;
   }
 }
+.footer-company p,.footer-column a,.footer-column button,.footer-contact p{font-family:var(--font-body)}.footer-column h3{font-family:var(--font-display);font-size:1.3rem}.footer-logo-box,.footer-quote-btn span{border-radius:0}.footer-quote-btn{border-radius:0;background:var(--clay)}.footer-quote-btn:hover{background:var(--sand)}

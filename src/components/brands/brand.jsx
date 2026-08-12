@@ -1,5 +1,5 @@
-import React from "react";
 import "./brand.css";
+import Reveal from "../Reveal";
 
 import souledStore from "../../Safal_brand_logos_PNG/01_The_Souled_Store.png";
 import aureme from "../../Safal_brand_logos_PNG/02_Aureme.png";
@@ -66,7 +66,7 @@ function Brands() {
     <section className="brands-section" id="clients">
 
       {/* Section Header */}
-      <div className="brands-header">
+      <Reveal className="brands-header">
 
         
 
@@ -86,7 +86,7 @@ function Brands() {
 
         </div>
 
-      </div>
+      </Reveal>
 
 
       {/* Top decorative line */}
@@ -96,7 +96,7 @@ function Brands() {
 
 
       {/* Marquee */}
-      <div className="brands-marquee-wrapper">
+      <Reveal className="brands-marquee-wrapper" delay={150}>
 
         <div className="brands-marquee">
 
@@ -124,7 +124,7 @@ function Brands() {
 
         </div>
 
-      </div>
+      </Reveal>
 
 
       {/* Bottom information */}

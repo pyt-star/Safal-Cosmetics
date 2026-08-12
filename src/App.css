@@ -1,14 +1,2 @@
-.app-container {
-  width: 100%;
-  min-height: 100vh;
-}
-
-section {
-  padding: 100px 5%;
-}
-
-@media (max-width: 900px) {
-  section {
-    padding: 60px 5%;
-  }
-}
+main { overflow: clip; }
+section { padding-inline: clamp(1.25rem, 5vw, 5rem); }

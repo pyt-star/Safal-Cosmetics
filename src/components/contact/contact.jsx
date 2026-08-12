@@ -1,5 +1,6 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import "./Contact.css";
+import Reveal from "../Reveal";
 
 function Contact() {
   const [showForm, setShowForm] = useState(false);
@@ -12,7 +13,7 @@ function Contact() {
 
       <section className="contact-section" id="contact">
 
-        <div className="contact-container">
+        <Reveal className="contact-container">
 
           {/* Left Side */}
           <div className="contact-content">
@@ -85,7 +86,7 @@ function Contact() {
 
           </div>
 
-        </div>
+        </Reveal>
 
 
         {/* Bottom */}

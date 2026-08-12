@@ -1,5 +1,5 @@
-import React from "react";
 import "./About.css";
+import Reveal from "../Reveal";
 
 const About = () => {
   return (
@@ -7,21 +7,21 @@ const About = () => {
       <div className="about-container">
 
         {/* Top Label */}
-        <div className="about-label">
+        <Reveal className="about-label">
           <span></span>
           WHO WE ARE
-        </div>
+        </Reveal>
 
         {/* Main Heading */}
-        <div className="about-heading-wrapper">
+        <Reveal className="about-heading-wrapper" delay={80}>
           <h2 className="about-heading">
             The Manufacturing Partner Behind{" "}
             <span>Your Next Successful Brand.</span>
           </h2>
-        </div>
+        </Reveal>
 
         {/* Description */}
-        <div className="about-content">
+        <Reveal className="about-content" delay={160}>
           <div className="about-description">
             <p>
               Safal Cosmetics is a trusted partner for businesses looking to
@@ -48,10 +48,10 @@ const About = () => {
               solutions.
             </p>
           </div>
-        </div>
+        </Reveal>
 
         {/* Stats */}
-        <div className="about-stats">
+        <Reveal className="about-stats" delay={220}>
 
           <div className="about-stat">
             <h3>20<span>+</span></h3>
@@ -73,7 +73,7 @@ const About = () => {
             <p>Vision — Your Brand,<br />Our Expertise</p>
           </div>
 
-        </div>
+        </Reveal>
 
       </div>
     </section>

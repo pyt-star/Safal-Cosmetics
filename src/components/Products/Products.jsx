@@ -1,6 +1,7 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import { useNavigate } from "react-router-dom";
 import "./Products.css";
+import Reveal from "../Reveal";
 
 const products = [
   {
@@ -49,7 +50,7 @@ const Products = () => {
     <section className="products-section" id="services">
       <div className="products-container">
 
-        <div className="products-heading">
+        <Reveal className="products-heading">
           <span className="section-label">WHAT WE CREATE</span>
 
           <h2>
@@ -61,9 +62,9 @@ const Products = () => {
             From fragrance formulation to complete private-label manufacturing,
             Safal Cosmetics brings ideas to life with quality and precision.
           </p>
-        </div>
+        </Reveal>
 
-        <div className="products-grid">
+        <Reveal className="products-grid" delay={140}>
           {products.map((product, index) => (
             <div
               className={`product-card ${
@@ -101,7 +102,7 @@ const Products = () => {
               </button>
             </div>
           ))}
-        </div>
+        </Reveal>
 
       </div>
     </section>

@@ -1,8 +1,8 @@
 .about-section {
   position: relative;
   padding: 130px 6% 100px;
-  background: #f5f2eb;
-  color: #17191d;
+  background: var(--paper);
+  color: var(--ink);
   overflow: hidden;
 }
 
@@ -394,3 +394,7 @@
     border-bottom: none;
   }
 }
+
+.about-section .about-label, .about-section .about-heading span, .about-section .about-side-text span, .about-section .about-stat h3 span, .about-section .about-stat-special h3 { color: var(--clay); }
+.about-section .about-label span { background: var(--clay); }.about-section .about-heading, .about-section .about-side-text p, .about-section .about-stat h3 { font-family: var(--font-display); }.about-section .about-description p { font-family: var(--font-body); color: var(--muted); }.about-section .about-description p:first-child { color: var(--ink); }.about-section .about-btn { border-radius: 0; background: var(--ink); }.about-section .about-btn:hover { background: var(--clay); }.about-section .about-btn-arrow { border-radius: 0; background: var(--paper); }.about-section .about-side-text { border-color: var(--clay); }.about-section .about-stat { border-color: var(--line); }
+.about-section .about-heading{font-weight:700;letter-spacing:-.055em}.about-section .about-stats.is-visible .about-stat{animation:statIn .55s cubic-bezier(.16,1,.3,1) both}.about-section .about-stats.is-visible .about-stat:nth-child(2){animation-delay:70ms}.about-section .about-stats.is-visible .about-stat:nth-child(3){animation-delay:140ms}.about-section .about-stats.is-visible .about-stat:nth-child(4){animation-delay:210ms}@keyframes statIn{from{opacity:0;transform:translateY(1.5rem)}to{opacity:1;transform:none}}

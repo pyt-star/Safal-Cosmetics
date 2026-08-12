@@ -13,12 +13,17 @@ import ScrollToTop from "./components/ScrollToTop";
 function HomePage() {
   return (
     <>
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Navbar />
-      <Hero />
-      <About />
-      <Brand />
-      <Products />
-      <Contact />
+
+      <main id="main-content">
+        <Hero />
+        <About />
+        <Brand />
+        <Products />
+        <Contact />
+      </main>
+
       <Footer />
     </>
   );
@@ -27,12 +32,22 @@ function HomePage() {
 function App() {
   return (
     <BrowserRouter>
+      <ScrollToTop />
+
       <Routes>
+        {/* Home Page */}
         <Route path="/" element={<HomePage />} />
 
+        {/* Individual Service Pages */}
         <Route
           path="/services/:serviceId"
-          element={<ServicePage />}
+          element={
+            <>
+              <Navbar />
+              <ServicePage />
+              <Footer />
+            </>
+          }
         />
       </Routes>
     </BrowserRouter>

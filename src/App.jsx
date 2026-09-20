@@ -1,3 +1,4 @@
+
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 
 import Navbar from "./components/Navbar/Navbar";
@@ -9,11 +10,15 @@ import Contact from "./components/contact/contact";
 import Footer from "./components/Footer/Footer";
 import ServicePage from "./components/ServicePage/ServicePage";
 import ScrollToTop from "./components/ScrollToTop";
+import OwnerContact from "./components/OwnerContact/OwnerContact";
 
 function HomePage() {
   return (
     <>
-      <a className="skip-link" href="#main-content">Skip to content</a>
+      <a className="skip-link" href="#main-content">
+        Skip to content
+      </a>
+
       <Navbar />
 
       <main id="main-content">
@@ -25,6 +30,9 @@ function HomePage() {
       </main>
 
       <Footer />
+
+      {/* Floating Owner Contact Widget */}
+      <OwnerContact />
     </>
   );
 }
@@ -35,10 +43,8 @@ function App() {
       <ScrollToTop />
 
       <Routes>
-        {/* Home Page */}
         <Route path="/" element={<HomePage />} />
 
-        {/* Individual Service Pages */}
         <Route
           path="/services/:serviceId"
           element={

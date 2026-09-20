@@ -1,13 +1,24 @@
+import { useLocation, useNavigate, Link } from "react-router-dom";
 import "./Footer.css";
 import safalLogo from "../../assets/images/safallogo.png";
 
 const Footer = () => {
   const currentYear = new Date().getFullYear();
+  const location = useLocation();
+  const navigate = useNavigate();
 
   const scrollToSection = (id) => {
-    document.getElementById(id)?.scrollIntoView({
-      behavior: "smooth",
-    });
+    if (location.pathname === "/") {
+      if (id === "home") {
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        document.getElementById(id)?.scrollIntoView({
+          behavior: "smooth",
+        });
+      }
+    } else {
+      navigate(`/#${id}`);
+    }
   };
 
   return (
@@ -52,11 +63,11 @@ const Footer = () => {
         <div className="footer-column">
           <h3>Our Solutions</h3>
 
-          <a href="#services">Private Label Manufacturing</a>
-          <a href="#services">Fragrance Development</a>
-          <a href="#services">Product Formulation</a>
-          <a href="#services">Packaging Solutions</a>
-          <a href="#services">Contract Manufacturing</a>
+          <Link to="/services/private-label-manufacturing">Private Label Manufacturing</Link>
+          <Link to="/services/fragrance-solutions">Fragrance Development</Link>
+          <Link to="/services/personal-care">Product Formulation</Link>
+          <Link to="/services/aerosol-products">Packaging Solutions</Link>
+          <Link to="/services/private-label-manufacturing">Contract Manufacturing</Link>
         </div>
 
         {/* Contact */}

@@ -1,19 +1,53 @@
+
 import "./Hero.css";
-import heroImage from "../../assets/images/image.png";
+import heroImage from "../../assets/images/hero2.png";
 
 const Hero = () => (
-  <section className="hero" id="home">
-    <img className="hero-image" src={heroImage} alt="A person applying fragrance from a perfume bottle" />
+  <section
+    className="hero"
+    id="home"
+    style={{ "--hero-image": `url(${heroImage})` }}
+  >
     <div className="hero-shade" aria-hidden="true"></div>
+
     <div className="hero-content">
-      <h1><span>Safal</span> <span>Cosmetics</span></h1>
-      <p className="hero-kicker">Fragrance manufacturing · since 2004</p>
+      <div className="hero-heading">
+        <h1>
+          <span>SAFAL</span>
+          <em>COSMETICS</em>
+        </h1>
+      </div>
+
+      <p className="hero-description">
+        A manufacturing partner for fragrance and personal-care brands
+        that care about the formula, the finish, and the next production run.
+      </p>
+
+      <div className="hero-buttons">
+        {/* Google Form Button */}
+        <a
+          href="https://docs.google.com/forms/d/e/1FAIpQLSdm-vCMxguLdQTMSfg7o_JrHi22_PPxqnMG-RgRQ0MCI4fLZA/viewform?usp=header"
+          className="hero-primary-btn"
+          target="_blank"
+          rel="noopener noreferrer"
+        >
+          <span>Start a conversation</span>
+          <b>→</b>
+        </a>
+
+        {/* Capabilities Button */}
+        <a href="#services" className="hero-secondary-btn">
+          See our capabilities
+        </a>
+      </div>
+
+      <div className="hero-proof">
+        <span>From brief to shelf</span>
+        <span>Formula · fill · finish</span>
+      </div>
     </div>
-    <div className="hero-bottom">
-      <p className="hero-intro">We turn a scent direction into a finished product—formulated, filled, and ready for your brand to carry forward.</p>
-      <div className="hero-actions"><a href="#contact" className="hero-primary-btn">Begin a project <b>→</b></a><a href="#services" className="hero-secondary-btn">Explore capabilities</a></div>
-      <p className="hero-index"><span>01</span> India · B2B manufacturing</p>
-    </div>
+
   </section>
 );
+
 export default Hero;

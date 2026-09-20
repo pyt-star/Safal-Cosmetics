@@ -12,7 +12,6 @@
   --font-body: "Trebuchet MS", "Aptos", "Segoe UI", system-ui, sans-serif;
   --transition: 240ms cubic-bezier(.2,.75,.25,1);
 }
-
 * { box-sizing: border-box; }
 html { scroll-behavior: smooth; }
 body { margin: 0; overflow-x: hidden; background: var(--paper); color: var(--ink); font-family: var(--font-body); -webkit-font-smoothing: antialiased; }

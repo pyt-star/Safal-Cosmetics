@@ -8,6 +8,7 @@ const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
+  const crmBaseUrl = (import.meta.env.VITE_CRM_URL || "").trim().replace(/\/+$/, "");
 
   useEffect(() => {
     const onScroll = () => {
@@ -113,6 +114,17 @@ const Navbar = () => {
 
           <a onClick={(e) => handleNavClick(e, "#contact")} href="/#contact">
             Contact
+          </a>
+
+          <a
+            href={crmBaseUrl ? `${crmBaseUrl}/login` : undefined}
+            className="admin-login-link"
+            onClick={closeMenu}
+            target="_blank"
+            rel="noopener noreferrer"
+            aria-disabled={!crmBaseUrl}
+          >
+            Admin Login
           </a>
         </div>
 

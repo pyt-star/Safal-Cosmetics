@@ -164,6 +164,12 @@
   transform-origin: left;
 }
 
+.navbar-links .admin-login-link {
+  color: var(--clay);
+  font-size: 0.7rem;
+  letter-spacing: 0.04em;
+}
+
 
 /* =========================================
    Request Quote Button
@@ -252,7 +258,7 @@
    Tablet Responsive
 ========================================= */
 
-@media (max-width: 850px) {
+@media (max-width: 980px) {
   .top-contact-inner {
     justify-content: center;
     gap: 1.2rem;
